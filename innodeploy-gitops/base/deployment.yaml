@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: innodeploy-app
+  labels:
+    app: innodeploy-app
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: innodeploy-app
+
+  template:
+    metadata:
+      labels:
+        app: innodeploy-app
+
+    spec:
+      containers:
+        - name: innodeploy-app
+          image: nourhenhachem/innodeploy-app:latest
+          ports:
+            - containerPort: 3000
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
