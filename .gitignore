@@ -1,0 +1,22 @@
+Hachem Nourhen <hachemnourhen8@gmail.com>
+	
+23:48 (il y a 0 minute)
+	
+	
+À moi
+node_modules/
+.env
+dist/
+build/
+coverage/
+
+*.log
+
+.DS_Store
+
+.idea/
+.vscode/
+
+tmp/
+
+*.swp
